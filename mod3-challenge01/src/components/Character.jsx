@@ -1,5 +1,3 @@
-import CharacterList from "./CharacterList";
-
 const Character = ({ name, status, species, imageUrl, setImage }) => {
     return (
         <div
@@ -15,6 +13,6 @@ const Character = ({ name, status, species, imageUrl, setImage }) => {
     );
 };
 
-export default Character
+export default Character;
       
       

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import { getCharacters } from "../service";
-import { Character } from "Character";
+import Character from "./Character";
 
 const CharacterList = () => {
     const [characterList, setCharacterList] = useState([])
@@ -25,8 +25,15 @@ return(
 
     </div>
         {
-            characterList.map((char)=>(
-                <Character key={char.id} name={char.name} status={char.status} species={char.species} imageUrl={char.image} setImage={setImage}/>
+            characterList.map((character)=>(
+                < Character 
+                 key={character.id} 
+                 name={character.name} 
+                 status={character.status} 
+                 species={character.species} 
+                 imageUrl={character.image} 
+                 setImage={setImage}
+                />
             )
 
             )
@@ -35,4 +42,4 @@ return(
 )    
 }
 
-export default CharacterList
+export default CharacterList;
