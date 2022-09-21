@@ -1,29 +1,20 @@
-import { useState } from "react";
-import { useEffect } from "react";
-import { getCharacters } from "../service";
+import CharacterList from "./CharacterList";
 
-const CharacterList = () => {
-    const [characterList, setCharacterList] = useState([])
-    const [isLoading, setIsLoading] = useState(false)
-    const [image, setImage] = useState('')
+const Character = ({ name, status, species, imageUrl, setImage }) => {
+    return (
+        <div
+        className='color-square'
+        onClick={() => setImage(imageUrl)}
+        >
+         <img src={imageUrl} alt="" />
+         <p>{name}</p>
+         <p>{status}</p>
+         <p>{species}</p>
+        
+        </div>
+    );
+};
 
-    useEffect(()=>{
-        setIsLoading(true);
-        getCharacters()
-            .then((data) => setCharacterList(data.results))
-            .catch((err) => console.log(err))
-            .finally(() => setIsLoading(false))
-    },[])
-    
-
-return(
-    <div className='page'>
-        {isLoading && <span className="loading-text">Loading</span>}
-    <div>
-        <img src={image} alt="No hay imagen" />
-    </div>
-    </div>
-)    
-}
-
-export default CharacterList
+export default Character
+      
+      
