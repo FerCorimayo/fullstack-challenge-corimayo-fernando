@@ -1,9 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-
+import CharacterList from './components/Character';
 function App() {
   return (
     <div className="App">
+      <CharacterList/>
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
